@@ -81,32 +81,32 @@ I grouped the data by `Genre` to see specific trends.
 I created five visualizations to make these statistics easier to understand.
 
 ### 5.1 Visualization 1: histogram of global sales
-![vis1](vis1.png)
+![vis1](img/vis1.png)
 I plotted a histogram with a Kernel Density Estimate (KDE).
 *   **Observation:** the distribution is heavily right-skewed, with most products clustered near zero sales and a long tail extending toward higher values. The frequency peaks dramatically at the lower end (around 50,000+ occurrences) and drops sharply as sales increase.
 *   **Action:** the visualization focuses on sales from 0 to 4 million, which captures the bulk of the data. Without this range limitation, the extreme outliers would make the main pattern nearly impossible to see.
 *   **Meaning:** this visually confirms the positive skew. It looks like a "Power Law" distribution. This distribution is common in creative industries (like music and books), where a "winner takes all" dynamic exists.
 
 ### 5.2 Visualization 2: bar chart of counts by genre
-![vis2](vis2.png)
+![vis2](img/vis2.png)
 I used a bar chart (`sns.countplot`) to see how many games were made for each genre.
 *   **Observation:** the Action bar is significantly taller than the rest. **Sports** is second.
 *   **Meaning:** developers love making Action games. However, referencing back to my descriptive stats, since Action games don't have the *highest* average sales, this implies that making an Action game is risky because the competition is so strong competitive.
 
 ### 5.3 Visualization 3: boxplot of sales by genre
-![vis3](vis3.png)
+![vis3](img/vis3.png)
 I used a boxplot to visualize the spread and outliers.
 *   **Observation:** every single genre has black dots above the "whiskers."
 *   **Meaning:** these dots are the outliers. Even in "niche" genres like Strategy, there are occasional breakout hits. However, the "box" (which represents the middle 50% of games) is higher for Platformers than for Adventure games, meaning Platformers are generally a "safer" investment.
 
 ### 5.4 Visualization 4: scatterplot. NA Sales versus EU Sales
-![vis4](vis4.png)
+![vis4](img/vis4.png)
 I plotted NA sales against EU sales.
 *   **Observation:** the dots form a cluster that moves upwards diagonally.
 *   **Meaning:** there is a positive linear relationship. If a game is popular in the US, it is almost certainly popular in Europe. The tastes of these two markets are very similar.
 
 ### 5.5 Visualization 5: line сhart - total global sales over time
-![vis5](vis5.png)
+![vis5](img/vis5.png)
 I grouped the sales by `Year` and plotted a line graph.
 *   **Observation:** the line rises steadily in the 90s, peaks massively around **2008-2009**, and then appears to drop off.
 *   **Context:** the peak corresponds to the "Wii/PS3/Xbox360" era, which was a golden age for physical retail. The drop-off after 2012 might look alarming, but it likely reflects a limitation in the dataset: the shift to digital downloads (Steam, PlayStation Store) which might not be fully captured in this older retail dataset.
@@ -124,14 +124,14 @@ I generated a correlation matrix for the numerical columns. The results were fas
 | **NA vs Global** | **0.94** | **Very strong.** NA is the primary driver of world success. |
 | **NA vs JP (or EU vs Japan)** | **0.45** | **Moderate/weak.** this is the outlier. |
 
-![heatmap](heatmap.png)
+![heatmap](img/heatmap.png)
 
 **My thoughts about Japan's anomaly:**
 
 The correlation of 0.45 between North America and Japan or Europe and Japan is significantly lower than the others. This proves statistically that the Japanese market is unique. A game that tops the charts in New York might fail in Tokyo, and vice versa. For a global publisher, this means they need a different strategy for Japan compared to the rest of the world.
 
 ### 6.2 Regression analysis
-![line](line.png)
+![line](img/line.png)
 I plotted a regression line for NA Sales versus Global Sales.
 The regression line fits the data very tightly. The slope is steep, indicating that for every 1 million units sold in North America, the Global Sales usually increase by roughly 2 million (accounting for the rest of the world). This confirms that North America is the "main buyer" market if you win there, you win everywhere (except maybe Japan).
 
